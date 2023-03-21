@@ -6,8 +6,5 @@
     "dotenv": "^16.0.3",
     "hardhat": "^2.13.0",
     "number-abbreviate": "^2.0.0"
-  },
-  "devDependencies": {
-    "@openzeppelin/test-helpers": "^0.5.16"
   }
 }

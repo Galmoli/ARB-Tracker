@@ -17,13 +17,16 @@ async function main() {
     var currentBalance = await arb.balanceOf(DISTRIBUTOR);
     currentBalance = hre.ethers.utils.formatEther(currentBalance);
 
-    var balanceDiff = INITIAL_BALANCE - currentBalance;
-    var perDiff = balanceDiff / INITIAL_BALANCE * 100;
+    var claimed = INITIAL_BALANCE - currentBalance;
+    var perDiff = claimed / INITIAL_BALANCE * 100;
+
+    const latestBlock = await hre.ethers.provider.getBlock("latest")
 
     console.clear();
-    console.log(`ARB CLAIMED: ${numAbbr.abbreviate(balanceDiff, 2)} | ${perDiff}%`);
+    console.log(`BLOCK: ${latestBlock.number}`);
+    console.log(`ARB CLAIMED: ${numAbbr.abbreviate(claimed, 2)} | ${perDiff}%`);
 
-  }, 1000);
+  }, 5000);
 }
 
 main().catch((error) => {

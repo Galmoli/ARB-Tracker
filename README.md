@@ -1,4 +1,4 @@
-# ARB-Tracker
+# ARB Airdrop claim tracker
 
 ```jsx
 npm i
